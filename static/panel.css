@@ -1,0 +1,253 @@
+.panel {
+    background: white;
+    border: 3px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    margin-left: 2.5%;
+    margin-top: 2em;
+
+    width: 32.5%;
+}
+
+.title_img_icon {
+    display: inline-block;
+    height: 65px;
+    margin: 5px;
+}
+
+.title_text {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    position: absolute;
+
+    font-family: Roboto, serif;
+    font-size: 30px;
+
+    line-height: 65px;
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+/*
+##### Score ######
+*/
+.score {
+    margin: 2.5em 5px 5px;
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.5s;
+
+    height: 3em;
+
+    overflow: hidden;
+}
+
+.score:hover {
+    height: 15em;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.score_title_span {
+    font-family: Roboto, serif;
+    font-size: 17px;
+}
+
+#score_title_left {
+    float: left;
+    margin-left: 2px;
+}
+
+#score_title_right {
+    float: right;
+    margin-right: 2px;
+}
+
+.score_bar {
+    background: white;
+    border: 2px solid black;
+    height: 1.5em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.score_bar_black {
+    width: 50%;
+    height: 1.5em;
+    background-color: black;
+}
+
+.score_bar_white {
+    width: 50%;
+    height: 1.5em;
+    background-color: white;
+}
+
+.score_chart {
+    background-color: white;
+    height: 100%;
+    border: 2px solid black;
+    border-top: 1px solid transparent;
+    transition: 0.25s;
+}
+
+/*
+##### Game information #####
+*/
+
+.game_info {
+    margin: 2.5em 5px 5px;
+    height: 75%;
+
+    transition: 0.5s;
+
+    border: 3px solid black;
+    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+/* player */
+.info_player {
+    float: top;
+    padding: 0.5em;
+    border-bottom: 3px solid black;
+}
+
+.info_title_span {
+    font-family: Roboto, serif;
+    font-size: 17px;
+}
+
+#info_title_left {
+    float: left;
+}
+
+#info_title_right {
+    float: right;
+}
+
+/* History */
+
+.info_history {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+/* Menu */
+
+.info_menu {
+    border-top: 3px solid black;
+    padding: 0.25em;
+}
+
+.info_button {
+    border: 2px solid black;
+
+    font-family: Roboto, serif;
+    font-size: 17px;
+
+    padding: 0.25em;
+    width: 20%;
+
+    text-align: center;
+
+    transition: 0.25s;
+}
+
+.info_button:hover {
+    border: 2px solid black;
+
+    font-family: Roboto, serif;
+    font-weight: bold;
+    font-size: 17px;
+
+    padding: 0.25em;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    transition: 0.25s;
+}
+
+#button_restart {
+    float: left;
+}
+
+#button_advice {
+    float: right;
+}
+
+/* move information */
+ul {
+    list-style: none;
+    padding: 0;
+
+    display: block;
+    margin-left: 1em;
+    margin-right: 0.5em;
+}
+
+.move_li {
+    text-align: center;
+    font-family: Roboto, serif;
+    font-size: 17px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.scroll_menu {
+    max-height: 34em;
+    height: auto;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.scroll_menu::-webkit-scrollbar-track {
+    background-color: transparent;
+
+}
+
+.scroll_menu::-webkit-scrollbar {
+    width: 3px;
+    background-color: transparent;
+}
+
+.scroll_menu::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+.move_info_score_left {
+    display: inline-block;
+    width: 50px;
+    min-width: 50px;
+    float: left;
+}
+
+.move_info_score_right {
+    min-width: 50px;
+    width: 50px;
+    float: right;
+}
+
+.move_info {
+    text-align: center;
+    min-width: 100px;
+    width: 100px;
+}
+
+.info_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

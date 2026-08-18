@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Othello AI</title>
+    <link rel="icon" type="image/gif/png" href="{{ url_for('static', filename='images/oi_icon.ico') }}">
+
+    <script src="{{ url_for('static', filename='chart.js') }}"></script>
+
+    <script type="text/javascript">
+        /*Imports*/
+        const PIECE_EMPTY = 0;
+        const PIECE_BLACK = 2;
+        const PIECE_WHITE = 1;
+        const PIECE_MOVE = 5;
+
+        const SCORE_WHITE_WIN = 1;
+        const SCORE_BLACK_WIN = 2;
+
+        const API_ENGINE_MOVE  = "/api/move/";
+        const API_SETTING = "/api/setting/";
+        const STREAM_API_BOARD = "/api/game-stream/";
+
+        let engine_color = {{ 'true' if ENGINE_BLACK == 2 else "false" }};
+    </script>
+
+</head>
+
+<body>
+
+<div class="main_div">
+
+    <!-- Board for the game -->
+    {% include "board.html" %}
+
+    <!-- Panel for the game -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='panel.css') }}">
+
+    <div class="panel">
+        <div class="title">
+            <img class="title_img_icon" src="{{ url_for('.static', filename='images/logo_png.png') }}" alt="Game">
+        </div>
+
+        <div class="score">
+            <div class="score_title">
+                <span class="score_title_span" id="score_title_left">Black <b id="score_black">50</b></span>
+                <span class="score_title_span" id="score_title_right"><b id="score_white">50</b> White</span>
+            </div>
+
+            <div class="score_bar">
+                <div class="score_bar_black" id="bar_black"></div>
+                <div class="score_bar_white" id="bar_white"></div>
+            </div>
+
+            <div class="score_chart">
+                <canvas id="score_chart" class="canvas_chart"></canvas>
+            </div>
+        </div>
+        <!-- Information of the game -->
+        <div class="game_info">
+            <div class="info_player">
+                <span class="info_title_span" id="info_title_left">Black</span>
+                <span class="info_title_span" id="info_title_right">White</span>
+            </div>
+            <div class="info_history">
+                <ul class="scroll_menu" id="history">
+
+                    <li class="move_li">
+                        <span class="move_info_score_left">+10</span>
+                        <span class="move_info">Black : AB</span>
+                        <span class="move_info_score_right">-10</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="info_menu">
+                <div class="info_button" id="button_restart" onclick="restart()"> Restart <i>Game</i></div>
+                <div class="info_button" id="button_play_as" onclick="change_engine_color()"> Play as <i>black</i></div>
+                <div class="info_button" id="button_advice" onclick="update_advice()"> Hide <i>advice</i></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
